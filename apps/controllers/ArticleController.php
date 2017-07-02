@@ -40,6 +40,12 @@ class ArticleController extends BaseController{
     $this->debug->log("ArticleController::create()");
     $articles = new ArticleModel($this->dbh);
     $form = $articles->createForm();
+
+    $article_category = new ArticleCategoryModel($this->dbh);
+    $article_categoreis = $article_category->find('all');
+    $this->debug->log("ArticleController::create() article_categoreis:".print_r($article_categoreis, true));
+    
+    $this->set('ArticleCategory', $article_categoreis);
     $this->set('Title', 'Article Create');
     $this->set('Article', $form['Article']);
   }

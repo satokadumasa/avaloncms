@@ -5,6 +5,5 @@
     </a>
   </div>
   <div class="site_setup">
-    <!----value:Sitemenu---->
   </div>
 </div>

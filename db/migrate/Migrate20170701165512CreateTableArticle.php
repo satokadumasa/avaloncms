@@ -1,5 +1,5 @@
 <?php
-class Migrate20170630092333CreateTableArticleCategory extends BaseMigrate{
+class Migrate20170701165512CreateTableArticle extends BaseMigrate{
   private $dbh = null;
   public function __construct($default_database) {
     parent::__construct($default_database);
@@ -7,13 +7,17 @@ class Migrate20170630092333CreateTableArticleCategory extends BaseMigrate{
 
   public function up() {
     $sql = <<<EOM
-CREATE TABLE article_categories (
+CREATE TABLE articles (
   id int(9) NOT NULL AUTO_INCREMENT,
-  name varchar(255) NOT NULL,
+  user_id int(8) NOT NULL,
+  article_category_id int(8) NOT NULL,
+  file_name varchar(128) NOT NULL,
+  title varchar(128) NOT NULL,
+  body text NOT NULL,
   created_at datetime NOT NULL,
   modified_at datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY index_article_categories_id (id)
+  KEY index_articles_id (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 EOM;
     parent::up($sql);
@@ -21,7 +25,7 @@ EOM;
 
   public function down(){
     $sql = <<<EOM
-DROP TABLE article_categories;
+DROP TABLE articles;
 EOM;
     parent::down($sql);
   } 

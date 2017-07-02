@@ -17,10 +17,26 @@
   </div>
   <div class='detail_rows'>
     <div class='label_clumn'>
+      Article file_name
+    </div>
+    <div class='input_clumn'>
+      <!----value:Article:file_name---->
+    </div>
+  </div>
+  <div class='detail_rows'>
+    <div class='label_clumn'>
       Article title
     </div>
     <div class='input_clumn'>
       <!----value:Article:title---->
+    </div>
+  </div>
+  <div class='detail_rows'>
+    <div class='label_clumn'>
+      Article body
+    </div>
+    <div class='input_clumn'>
+      <!----value:Article:body---->
     </div>
   </div>
 </div>
